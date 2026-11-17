@@ -1,0 +1,30 @@
+CHISPA CONNECT - proyecto del programa para Mac y Windows
+Creado por Fep
+
+La app abre https://chispabot-fepo1.vercel.app/connect/ en una ventana propia
+y le da permiso para hablar con el robot por USB. Si cambia la direccion
+de la web, editar la linea URL de main.js.
+
+OPCION A: hacerlo vos en tu Mac (terminal)
+1. Instalar Node.js (nodejs.org).
+2. En la carpeta del proyecto:
+     npm install
+     npm run dist:mac
+3. Queda en la carpeta dist/: Chispa-Connect.dmg y la app (.app) dentro de dist/mac-universal.
+4. Sin firmar: la primera vez, clic derecho sobre la app y Abrir.
+
+OPCION B: que GitHub lo compile (Mac y Windows juntos)
+1. En GitHub, crear un repo llamado ChispaBot en la cuenta FepIsCoding.
+2. Subir todos los archivos de esta carpeta. Si la carpeta oculta .github no sube
+   al arrastrar, crear el archivo a mano: Add file > Create new file, escribir
+   .github/workflows/build.yml y pegar el contenido de ese archivo.
+3. Pestana Actions > Build > Run workflow. Esperar unos minutos.
+4. En Releases quedan Chispa-Connect.dmg y Chispa-Connect-Setup.exe.
+
+La web ya apunta a esos archivos:
+  chispabot-fepo1.vercel.app/descargas/chispa-connect-mac
+  chispabot-fepo1.vercel.app/descargas/chispa-connect-windows
+Funcionan cuando exista la primera release.
+
+Avisos: los instaladores no van firmados. Windows muestra SmartScreen
+(Mas informacion > Ejecutar de todas formas).
