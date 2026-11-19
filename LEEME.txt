@@ -1,9 +1,8 @@
 CHISPA CONNECT - proyecto del programa para Mac y Windows
 Creado por Fep
 
-La app abre https://chispabot-fepo1.vercel.app/connect/ en una ventana propia
-y le da permiso para hablar con el robot por USB. Si cambia la direccion
-de la web, editar la linea URL de main.js.
+La app es independiente: trae la interfaz adentro, no abre ninguna web y anda sin internet.
+Tiene permiso para hablar con el robot por USB y mandar avisos.
 
 OPCION A: hacerlo vos en tu Mac (terminal)
 1. Instalar Node.js (nodejs.org).
