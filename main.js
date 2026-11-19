@@ -1,5 +1,5 @@
 const { app, BrowserWindow, shell } = require('electron');
-const URL = 'https://chispabot-fepo1.vercel.app/connect/';
+const path = require('path');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -17,11 +17,8 @@ function createWindow() {
     cb(ports.length ? ports[0].portId : '');
   });
   win.webContents.setWindowOpenHandler(({ url }) => { shell.openExternal(url); return { action: 'deny' }; });
-  win.webContents.on('did-fail-load', () => {
-    win.loadURL('data:text/html;charset=utf-8,' + encodeURIComponent(
-      '<body style="font-family:sans-serif;padding:24px"><h2>Sin conexión</h2><p>Chispa Connect necesita internet para abrir. Revisá tu conexión y reiniciá la app.</p></body>'));
-  });
-  win.loadURL(URL);
+  win.setMenuBarVisibility(false);
+  win.loadFile(path.join(__dirname, 'app', 'index.html'));
 }
 
 app.whenReady().then(createWindow);
